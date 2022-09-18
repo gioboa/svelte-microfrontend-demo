@@ -1,14 +1,8 @@
 <script lang="ts">
 	import { of, tap } from 'rxjs';
-	import { loadRemoteApp } from './shared/common';
-	
 	import { loadRemoteModule } from '@softarc/native-federation';
 	
-	let remoteAppTarget;
-	// const loadComponent = async (remoteEntry: string, exposedModule: string) => {
-	// 	const remoteApp = await loadRemoteApp(remoteEntry, exposedModule);
-	// 	new remoteApp({ target: remoteAppTarget });
-	// };
+	let remoteAppTarget;	
 	
 	(async () => {
 		const app = await loadRemoteModule('remote', './remote-app');
