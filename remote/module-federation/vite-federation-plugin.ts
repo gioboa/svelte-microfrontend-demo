@@ -5,8 +5,8 @@ import { federationBuilder } from '@softarc/native-federation/build.js';
 export async function federation(options: { projectName: string }) {
 	return {
 		name: 'vite-module-federation', // required, will show up in warnings and errors
-		async buildEnd() {
-			const outputPath = `dist/${options.projectName || 'not_defiend'}`;
+		async closeBundle() {
+			const outputPath = `dist`;
 
 			await federationBuilder.init({
 				options: {

@@ -1,12 +1,19 @@
 <script lang="ts">
 	import { of, tap } from 'rxjs';
 	import { loadRemoteApp } from './shared/common';
+	
+	import { loadRemoteModule } from '@softarc/native-federation';
+	
 	let remoteAppTarget;
-	const loadComponent = async (remoteEntry: string, exposedModule: string) => {
-		const remoteApp = await loadRemoteApp(remoteEntry, exposedModule);
-		new remoteApp({ target: remoteAppTarget });
-	};
-	loadComponent('http://localhost:4173/remote/remoteEntry.json', 'remote:app');
+	// const loadComponent = async (remoteEntry: string, exposedModule: string) => {
+	// 	const remoteApp = await loadRemoteApp(remoteEntry, exposedModule);
+	// 	new remoteApp({ target: remoteAppTarget });
+	// };
+	
+	(async () => {
+		const app = await loadRemoteModule('remote', './remote-app');
+		new app.default({ target: remoteAppTarget });
+	})();
 
 	of('emit')
 		.pipe(tap(() => console.log("I'm RxJs from host")))

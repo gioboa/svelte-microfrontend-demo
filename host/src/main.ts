@@ -1,8 +1,11 @@
-import App from './App.svelte';
-import 'es-module-shims';
+import { initFederation } from "@softarc/native-federation";
 
-const app = new App({
-	target: document.getElementById('app'),
-});
+(async () => {
 
-export default app;
+	await initFederation({
+		'remote': 'http://localhost:4173/remoteEntry.json'
+	});
+
+	await import('./bootstrap');
+
+})();
