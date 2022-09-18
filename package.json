@@ -1,0 +1,17 @@
+{
+	"name": "svelte-host-remote",
+	"version": "1.0.0",
+	"description": "Vite + Module Federation is now possible",
+	"main": "index.js",
+	"scripts": {
+		"install:deps": "npm --prefix ./host install && npm --prefix ./remote install",
+		"serve:host": "npm --prefix ./host run dev",
+		"serve:remote": "npm --prefix ./remote run build && npm --prefix ./remote run preview"
+	},
+	"author": {
+		"name": "Giorgio Boa",
+		"email": "giorgiob.boa@gmail.com",
+		"url": "https://github.com/gioboa"
+	},
+	"license": "ISC"
+}
