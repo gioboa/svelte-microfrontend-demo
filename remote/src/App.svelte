@@ -1,5 +1,9 @@
 <script lang="ts">
 	import { of, tap } from 'rxjs';
+
+	import { state } from 'shared';
+	console.log('remote got message:', state.message);
+
 	of('emit')
 		.pipe(tap(() => console.log("I'm RxJs from remote")))
 		.subscribe();
