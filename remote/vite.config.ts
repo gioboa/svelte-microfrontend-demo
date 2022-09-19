@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
-import { federation } from './module-federation/vite-federation-plugin';
 import { esBuildAdapter } from './module-federation/esbuild-adapter';
+import { federation } from '@gioboa/vite-module-federation';
 
 export default defineConfig(async () => ({
 	plugins: [
@@ -15,6 +15,6 @@ export default defineConfig(async () => ({
 			},
 			adapter: esBuildAdapter,
 		}),
-		svelte(), 
+		svelte(),
 	],
 }));

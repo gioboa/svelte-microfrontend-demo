@@ -10,6 +10,7 @@
 		"check": "svelte-check --tsconfig ./tsconfig.json"
 	},
 	"devDependencies": {
+		"@gioboa/vite-module-federation": "^0.1.0",
 		"@softarc/native-federation": "^0.9.2-beta.7",
 		"@sveltejs/vite-plugin-svelte": "^1.0.2",
 		"@tsconfig/svelte": "^3.0.0",

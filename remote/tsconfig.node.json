@@ -7,6 +7,5 @@
   "include": [
     "vite.config.ts",
     "module-federation/esbuild-adapter.ts",
-    "module-federation/vite-federation-plugin.ts"
   ]
 }
