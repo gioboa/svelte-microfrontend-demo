@@ -5,7 +5,6 @@
     "moduleResolution": "Node"
   },
   "include": [
-    "vite.config.ts",
-    "module-federation/esbuild-adapter.ts",
+    "vite.config.ts"
   ]
 }
