@@ -9,3 +9,5 @@ From this directory execute:
 - npm run serve:host (in a different terminal)
 
 Open your browser at http://localhost:5173/ to see the amazing result
+
+![screenshot](docs/screenshot.png)

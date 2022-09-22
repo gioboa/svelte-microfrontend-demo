@@ -11,7 +11,6 @@ export default defineConfig(async ({ command }) => ({
 		},
 	},
 	plugins: [
-		// tsconfigPaths(),
 		federation({
 			options: {
 				workspaceRoot: __dirname,
