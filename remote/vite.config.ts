@@ -11,7 +11,7 @@ export default defineConfig(async ({ command }) => ({
 		},
 	},
 	plugins: [
-		federation({
+		await federation({
 			options: {
 				workspaceRoot: __dirname,
 				outputPath: 'dist',
