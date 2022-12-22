@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
-import { federation } from '@gioboa/vite-module-federation';
+import { federation } from '@module-federation/vite';
 import { createEsBuildAdapter } from '@softarc/native-federation-esbuild';
 import { sveltePlugin } from './module-federation/esbuild-svelte-plugin';
 
