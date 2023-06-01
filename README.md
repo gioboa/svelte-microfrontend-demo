@@ -5,8 +5,7 @@
 From this directory execute:
 
 - npm run install:deps
-- npm run serve:remote
-- npm run serve:host (in a different terminal)
+- npm run preview
 
 Open your browser at http://localhost:5173/ to see the amazing result
 
