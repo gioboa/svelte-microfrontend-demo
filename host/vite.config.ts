@@ -1,29 +1,27 @@
-import { defineConfig } from 'vite';
-import { svelte } from '@sveltejs/vite-plugin-svelte';
-import { federation } from '@module-federation/vite';
-import { createEsBuildAdapter } from '@softarc/native-federation-esbuild';
-import { sveltePlugin } from './module-federation/esbuild-svelte-plugin';
+import { federation } from "@module-federation/vite";
+import { svelte } from "@sveltejs/vite-plugin-svelte";
+import { defineConfig } from "vite";
 
-export default defineConfig(async ({ command }) => ({
-	server: {
-		fs: {
-			allow: ['.', '../shared'],
-		},
-	},
-	plugins: [
-		await federation({
-			options: {
-				workspaceRoot: __dirname,
-				outputPath: 'dist',
-				tsConfig: 'tsconfig.json',
-				federationConfig: 'module-federation/federation.config.cjs',
-				verbose: false,
-				dev: command === 'serve',
-			},
-			adapter: createEsBuildAdapter({
-				plugins: [sveltePlugin],
-			}),
-		}),
-		svelte(),
-	],
-}));
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [
+    svelte(),
+    federation({
+      name: "host",
+      remotes: {
+        remote: {
+          type: "module",
+          name: "remote",
+          entry: "http://localhost:4174/remoteEntry.js",
+          entryGlobalName: "remote",
+          shareScope: "default",
+        },
+      },
+      exposes: {},
+      filename: "remoteEntry.js",
+    }),
+  ],
+  build: {
+    target: "chrome89",
+  },
+});

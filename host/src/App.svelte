@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { of, tap } from 'rxjs';
-	import { loadRemoteModule } from '@softarc/native-federation';
-
+	
 	let remoteAppTarget;
 	(async () => {
-		const app = await loadRemoteModule('remote', './remote-app');
+		//@ts-ignore
+		const app = await import("remote/remote-app");
 		new app.default({ target: remoteAppTarget });
 	})();
 

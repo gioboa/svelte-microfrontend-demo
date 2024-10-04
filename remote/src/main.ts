@@ -1,6 +1,8 @@
-import { initFederation } from "@softarc/native-federation";
+// @ts-ignore
+import App from "./App.svelte";
 
-(async () => {
-	await initFederation();
-	await import('./bootstrap');
-})();
+const app = new App({
+  target: document.getElementById("app"),
+});
+
+export default app;

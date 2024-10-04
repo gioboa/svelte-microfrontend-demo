@@ -1,11 +1,8 @@
-import { initFederation } from "@softarc/native-federation";
+// @ts-ignore
+import App from "./App.svelte";
 
-(async () => {
+const app = new App({
+  target: document.getElementById("app"),
+});
 
-	await initFederation({
-		'remote': 'http://localhost:4174/remoteEntry.json'
-	});
-
-	await import('./bootstrap');
-
-})();
+export default app;
